@@ -5,13 +5,13 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Copy only requirements first for better caching
-COPY Src/requirements.txt .
+COPY src_new/requirements.txt .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy rest of the application code
-COPY Src/ .
+COPY src_new/ .
 
 # Expose port
 EXPOSE 5000
